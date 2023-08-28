@@ -10,9 +10,10 @@ import org.springframework.data.mongodb.core.mapping.DocumentReference;
 
 import java.util.List;
 
-@Document(collection = "Movies")
-@Data // for getter setter
-@AllArgsConstructor //Constructor annotaion
+
+@Document(collection = "movies")
+@Data
+@AllArgsConstructor
 @NoArgsConstructor
 public class Movie {
     @Id
@@ -22,11 +23,12 @@ public class Movie {
     private String releaseDate;
     private String trailerLink;
     private String poster;
+
     private List<String> genres;
     private List<String> backdrops;
     @DocumentReference //ID of review in seperate collection (Manual relationship creation
     private List<Review> reviewIds;
 
-
-
 }
+
+
